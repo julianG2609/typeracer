@@ -1,0 +1,53 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+actor User_A
+actor User_B order 30
+
+autonumber
+
+== Login ==
+User_A -> Client_A : Login button press
+ref over Client_A, Server : login
+User_B -> Client_B : Login button press
+ref over Client_B, Server : login
+Server -> Client_A : user_joined(username)
+
+== Logout ==
+autonumber
+User_A -> Client_A : Quit button press
+Client_A -> Server ++ : logout()
+Server -> Client_B -- : user_left(username)
+
+== Game Play ==
+
+autonumber
+group Game Start
+    User_A -> Client_A : Start game
+    Client_A -> Server ++ : start_game()
+    par
+        Server -> Client_A : game_started()
+        Server -> Client_B : game_started()
+        deactivate Server
+    end
+end
+...
+group Game Update
+User_B -> Client_B : Type Text
+Client_B -> Server : update(progress)
+Server -> Client_A : update_user(progress)
+end
+...
+group Game End
+User_A -> Client_A : Finished typing
+Client_A -> Server : finished(stats)
+User_B -> Client_B : Finished typing
+Client_B -> Server ++ : finished(stats)
+par
+    Server -> Client_A : game_closed(all_stats)
+    Client_A -> User_A : Show summary
+    Server -> Client_B -- : game_closed(all_stats)
+    Client_B -> User_B : Show summary
+end
+end
+
+@enduml

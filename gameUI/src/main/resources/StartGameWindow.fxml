@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="parent" spacing="20.0" stylesheets="@TypeRacer.css" xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.StartGameView">
+    <children>
+        <HBox spacing="20.0" styleClass="appbar">
+            <children>
+                <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="appbar-title" text="Main Menu"
+                      textAlignment="CENTER"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button mnemonicParsing="false" onAction="#onSettingsButton" styleClass="appbar-button"
+                        text="Settings"/>
+                <Button mnemonicParsing="false" onAction="#onQuitButton" styleClass="appbar-button" text="Quit"
+                        textFill="WHITE"/>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+            </padding>
+        </HBox>
+        <Pane VBox.vgrow="ALWAYS"/>
+        <HBox alignment="CENTER">
+            <children>
+                <ImageView fx:id="logo" fitWidth="300" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@images/misc_assets/logo_black.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </HBox>
+      <VBox spacing="20.0">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Pane HBox.hgrow="ALWAYS" />
+                  <VBox spacing="10.0">
+                     <children>
+                          <HBox fx:id="settings" alignment="BOTTOM_CENTER" spacing="20.0">
+                           <children>
+                                  <VBox spacing="10.0">
+                                 <children>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your name: " />
+                                          <TextField fx:id="username" onAction="#onUsername" text="Player1" />
+                                          <Text fx:id="usernameErrorText" styleClass="error" strokeType="OUTSIDE"
+                                                strokeWidth="0.0" text="This name is already taken!" />
+                                          <HBox>
+                                              <children>
+                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Car colour:"
+                                                        textOrigin="CENTER" translateY="4.0" />
+                                                  <ComboBox fx:id="color" onAction="#colourSelected" prefWidth="150.0"
+                                                            promptText="Blue" visibleRowCount="6">
+                                                      <HBox.margin>
+                                                          <Insets left="10.0" />
+                                                      </HBox.margin>
+                                                  </ComboBox>
+                                              </children>
+                                          </HBox>
+                                 </children>
+                                  </VBox>
+                              <ToggleButton fx:id="readyButton" minHeight="39.0" minWidth="99.0" mnemonicParsing="false"
+                                            onAction="#onReadyButton" text="Ready up" />
+                           </children>
+                          </HBox>
+                        <Text fx:id="carColourTaken" styleClass="error" strokeType="OUTSIDE" strokeWidth="0.0"
+                              text="This colour is already taken!" />
+                     </children>
+                  </VBox>
+                  <Pane HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </VBox>
+        <Pane VBox.vgrow="ALWAYS" />
+    </children>
+</VBox>

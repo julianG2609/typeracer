@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+participant Client
+entity Client_EndpointManager
+entity Server_EndpointManager
+participant Server
+
+Client --> Client_EndpointManager ++ : registerEndpoint(Endpoint endpoint)
+Client_EndpointManager --> Server_EndpointManager ++ : endpointSyn(EndpointUid uid)
+Server_EndpointManager --> Server_EndpointManager ++ : lookup(EndpointUid uid)
+Server --> Server_EndpointManager : registerEndpoint(Endpoint endpoint)
+Server_EndpointManager --> Server_EndpointManager -- : return(EndpointId id)
+Server_EndpointManager --> Client_EndpointManager -- : endpointAck(EndpointId id)
+Client_EndpointManager --> Client -- : return(Endpoint endpoint)
+note over Client,Client_EndpointManager
+returnt endpoint now has the id from the Server
+end note
+
+@enduml

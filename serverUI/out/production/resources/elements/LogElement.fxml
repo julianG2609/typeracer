@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane fx:id="background" dividerPositions="0.8090452261306532" prefHeight="300.0" prefWidth="400.0" styleClass="background" stylesheets="LogEvent.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <Pane style="-fx-background-color: #000000;" />
+    <Text fx:id="text" text="Sample text" />
+</SplitPane>

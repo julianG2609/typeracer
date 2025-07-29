@@ -1,0 +1,65 @@
+.root {
+    -fx-font-size: 18;
+}
+
+.button {
+    -fx-background-color: #ff5555;
+    -fx-background-radius: 5;
+    -fx-text-fill: #ffffff;
+}
+
+.appbar {
+    -fx-background-color: #ff5555;
+    -fx-text-fill: #000000;
+    -fx-padding: 20;
+    -fx-spacing: 20;
+
+}
+
+.appbar Text {
+    -fx-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 28;
+}
+
+.appbar .button {
+    -fx-background-color: #ffffff !important;
+    -fx-text-fill: #ff5555 !important;
+}
+
+.port-container {
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-alignment: bottom-left;
+}
+
+.scroll-pane {
+    -fx-background-color: #444444;
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #ff5555;
+}
+
+.scroll-bar {
+    -fx-background-color: #444444;
+}
+
+.log-element {
+    -fx-preferred-height: 50;
+    -fx-background-radius: 10;
+    -fx-alignment: center_left;
+    -fx-padding: 10;
+    -fx-spacing: 10;
+}
+
+.log-element Text {
+    -fx-fill: #ffffff;
+    -fx-font-family: monospace;
+}

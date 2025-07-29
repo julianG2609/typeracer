@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="parent" styleClass="button-inverted" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.GameView">
+    <children>
+        <HBox styleClass="appbar">
+            <children>
+                <Text fill="WHITE" styleClass="appbar-title" text="TypeRacer" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Text fx:id="timer" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="timer" text="Time left 00:20" visible="false" />
+                <Pane layoutX="166.0" layoutY="30.0" HBox.hgrow="ALWAYS" />
+                <Button fx:id="quitButton" mnemonicParsing="false" onAction="#onQuitButton" styleClass="appbar-button" text="Quit game" />
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </HBox>
+        <Pane fx:id="curbTop" prefHeight="16.0" styleClass="curb" />
+        <Pane styleClass="street">
+            <children>
+                <VBox fx:id="lineStart" styleClass="checkered" translateX="85.0">
+                    <children>
+                        <Pane VBox.vgrow="ALWAYS" />
+                        <ImageView fx:id="imageStart" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/misc_assets/start.png" />
+                            </image>
+                        </ImageView>
+                        <Pane layoutX="10.0" layoutY="10.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                    <HBox.margin>
+                        <Insets right="-12.0" />
+                    </HBox.margin>
+                </VBox>
+                <VBox fx:id="lineFinish" styleClass="checkered" translateX="743.0">
+                    <children>
+                        <Pane VBox.vgrow="ALWAYS" />
+                        <ImageView fx:id="imageFinish" fitWidth="12.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@images/misc_assets/finish.png" />
+                            </image>
+                            <VBox.margin>
+                                <Insets />
+                            </VBox.margin>
+                        </ImageView>
+                        <Pane layoutX="10.0" layoutY="10.0" VBox.vgrow="ALWAYS" />
+                    </children>
+                    <HBox.margin>
+                        <Insets right="-12.0" />
+                    </HBox.margin>
+                </VBox>
+                <VBox fx:id="racetrack" minWidth="800.0" prefWidth="800">
+                    <children>
+                        <HBox styleClass="carWithMedal">
+                            <VBox>
+                                <Pane VBox.vgrow="ALWAYS" />
+                                <Pane styleClass="medal" />
+                                <Pane VBox.vgrow="ALWAYS" />
+                            </VBox>
+                            <VBox styleClass="carWithLabels">
+                                <children>
+                                    <Label styleClass="playerName" text="player1 (you)" />
+                                    <ImageView fitWidth="70.0" preserveRatio="true" styleClass="carImage">
+                                        <image>
+                                            <Image url="@images/cars/car_undefined.png" />
+                                        </image>
+                                    </ImageView>
+                                    <Label styleClass="speedLabel" text="speed: 0 wpm" />
+                                </children>
+                            </VBox>
+                        </HBox>
+                        <Pane styleClass="laneSeparator" />
+                        <HBox styleClass="carWithMedal">
+                            <VBox>
+                                <Pane VBox.vgrow="ALWAYS" />
+                                <Pane styleClass="medal" />
+                                <Pane VBox.vgrow="ALWAYS" />
+                            </VBox>
+                            <VBox styleClass="carWithLabels">
+                                <children>
+                                    <Label styleClass="playerName" text="player2" />
+                                    <ImageView fitWidth="70.0" preserveRatio="true" styleClass="carImage">
+                                        <image>
+                                            <Image url="@images/cars/car_undefined.png" />
+                                        </image>
+                                    </ImageView>
+                                    <Label styleClass="speedLabel" text="speed: 0 wpm" />
+                                </children>
+                            </VBox>
+                        </HBox>
+                        <Pane styleClass="laneSeparator" />
+                        <HBox styleClass="carWithMedal">
+                            <VBox>
+                                <Pane VBox.vgrow="ALWAYS" />
+                                <Pane styleClass="medal" />
+                                <Pane VBox.vgrow="ALWAYS" />
+                            </VBox>
+                            <VBox styleClass="carWithLabels">
+                                <children>
+                                    <Label styleClass="playerName" text="player3" />
+                                    <ImageView fitWidth="70.0" preserveRatio="true" styleClass="carImage">
+                                        <image>
+                                            <Image url="@images/cars/car_undefined.png" />
+                                        </image>
+                                    </ImageView>
+                                    <Label styleClass="speedLabel" text="speed: 0 wpm" />
+                                </children>
+                            </VBox>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox fx:id="raceLight">
+                    <children>
+                        <HBox fx:id="raceLightContainerRed" styleClass="raceLightContainer">
+                            <children>
+                                <Pane styleClass="raceLight" HBox.hgrow="ALWAYS" />
+                                <Pane layoutX="10.0" layoutY="10.0" styleClass="raceLight" />
+                                <Pane layoutX="40.0" layoutY="10.0" styleClass="raceLight" />
+                                <Pane layoutX="70.0" layoutY="10.0" styleClass="raceLight" />
+                                <Pane layoutX="100.0" layoutY="10.0" styleClass="raceLight" />
+                            </children>
+                        </HBox>
+                        <HBox fx:id="raceLightContainerGreen" layoutX="10.0" layoutY="10.0" styleClass="raceLightContainer">
+                            <children>
+                                <Pane styleClass="raceLight" HBox.hgrow="ALWAYS" />
+                                <Pane layoutX="10.0" layoutY="10.0" styleClass="raceLight" />
+                                <Pane layoutX="40.0" layoutY="10.0" styleClass="raceLight" />
+                                <Pane layoutX="70.0" layoutY="10.0" styleClass="raceLight" />
+                                <Pane layoutX="100.0" layoutY="10.0" styleClass="raceLight" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <StackPane fx:id="finishMessage" prefHeight="26.0" prefWidth="735.0">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" height="54.0" opacity="0.8" stroke="TRANSPARENT" strokeType="INSIDE" width="402.0">
+                            <StackPane.margin>
+                                <Insets />
+                            </StackPane.margin>
+                        </Rectangle>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Waiting for everyone to finish..." textAlignment="CENTER">
+                            <font>
+                                <Font size="24.0" />
+                            </font>
+                            <StackPane.margin>
+                                <Insets />
+                            </StackPane.margin>
+                        </Text>
+                    </children>
+                </StackPane>
+            </children>
+        </Pane>
+        <Pane fx:id="curbBottom" layoutX="10.0" layoutY="76.0" prefHeight="16.0" styleClass="curb" />
+        <VBox fx:id="typingPane" prefHeight="188.0" prefWidth="588.0" styleClass="typingPane" VBox.vgrow="ALWAYS">
+            <children>
+                <ScrollPane hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                    <content>
+                        <VBox fx:id="innerTypingPane" styleClass="innerTypingPane">
+                            <TextFlow fx:id="typingText" VBox.vgrow="ALWAYS" />
+                        </VBox>
+                    </content>
+                </ScrollPane>
+            </children>
+        </VBox>
+    </children>
+    <stylesheets>
+        <URL value="@GameWindow.css" />
+        <URL value="@TypeRacer.css" />
+    </stylesheets>
+</VBox>

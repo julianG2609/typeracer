@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+actor User
+
+autonumber
+
+User -> Client ++ : Login Button press
+Client -> Server ++ : login(username,passwordhash)
+alt auth server set
+    Server -> AuthServer ++ : authenticate(username,passwordhash)
+    alt auth successful
+        AuthServer -> Server : authentication_success()
+    else auth failed
+        AuthServer -> Server -- : authentication_failure()
+    end
+end
+alt authentication success
+    Server -> Client : login_accept(token)
+    Client -> User : Retry Screen
+else authentication fail
+    Server -> Client -- : login_reject()
+    Client -> User -- : Main Menu
+end
+@enduml

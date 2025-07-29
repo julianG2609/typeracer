@@ -1,0 +1,40 @@
+.appbar {
+    -fx-background-color: #ff5555;
+    -fx-text-fill: #ffffff;
+}
+
+.appbar-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 28;
+    }
+
+.appbar-button {
+    -fx-background-color: #ffffff !important;
+    -fx-text-fill: #ff5555 !important;
+}
+
+.button {
+    -fx-background-color: #ff5555;
+    -fx-background-radius: 5;
+    -fx-text-fill: #ffffff;
+}
+
+.toggle-button {
+    -fx-background-color: #ff5555;
+    -fx-background-radius: 5;
+    -fx-text-fill: #ffffff;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #55aaff;
+    -fx-background-radius: 5;
+    -fx-text-fill: #ffffff;
+}
+
+.error {
+    -fx-fill: #ff5555 !important;
+}
+
+.root {
+    -fx-font-size: 18;
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox stylesheets="@TypeRacerServer.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="serverui.controller.MainController">
+    <children>
+        <HBox styleClass="appbar">
+            <children>
+                <Text strokeWidth="0.0" text="TypeRacer Server" />
+                <Pane HBox.hgrow="ALWAYS" />
+                <Button mnemonicParsing="false" onAction="#onQuitButton" text="Quit" />
+            </children>
+        </HBox>
+        <HBox styleClass="port-container">
+            <children>
+                <VBox spacing="10.0">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Server port" />
+                        <TextField fx:id="port" prefWidth="80.0" text="1234" />
+                    </children>
+                </VBox>
+            <CheckBox fx:id="useAI" mnemonicParsing="false" text="Use AI" />
+                <Button fx:id="start" mnemonicParsing="false" onAction="#onSetButton" text="Set" />
+            </children>
+        </HBox>
+        <Separator />
+        <VBox spacing="10.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Server log" />
+                <ScrollPane fx:id="scrollPane" fitToWidth="true" prefHeight="300.0" prefWidth="400.0" VBox.vgrow="ALWAYS">
+                    <content>
+                        <VBox fx:id="list" spacing="5">
+                     <children>
+                     </children></VBox>
+                    </content>
+                </ScrollPane>
+            </children>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+        </VBox>
+    </children>
+</VBox>

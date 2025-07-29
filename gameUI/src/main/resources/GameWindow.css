@@ -1,0 +1,98 @@
+@font-face{
+font-family: 'Home Video';
+src: url('fonts/HomeVideo.ttf');
+}
+
+.street {
+    -fx-background-color: #333333;
+}
+
+.checkered {
+    -fx-background-image:url('images/misc_assets/checkered_pattern.png');
+    -fx-background-repeat: REPEAT;
+    -fx-background-position: TOP LEFT;
+    -fx-background-size: 66.66%;
+}
+
+.curb {
+    -fx-background-image:url('images/misc_assets/curb.png');
+    -fx-background-repeat: REPEAT;
+    -fx-background-size: 3.2% 1%;
+}
+
+.laneSeparator {
+    -fx-background-image:url('images/misc_assets/lane_separator.png');
+    -fx-background-repeat: REPEAT;
+    -fx-background-size: 12.6% 1;
+    -fx-min-height: 5;
+}
+
+.lineLabel {
+    -fx-background-color: #ffffff;
+}
+
+.carWithMedal {
+    -fx-alignment: center;
+    -fx-spacing: 5;
+}
+
+.medal {
+    -fx-background-repeat: NO-REPEAT;
+    -fx-background-size: 100% 100%;
+    -fx-pref-height: 40;
+}
+
+.carWithLabels {
+    -fx-padding: 5 0;
+    -fx-alignment: CENTER;
+    -fx-max-width: 0;
+    -fx-spacing: 2;
+}
+
+.playerName {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-color: #333333;
+}
+
+.speedLabel {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-background-color: #333333;
+}
+
+.typingPane {
+    -fx-padding: 0;
+}
+
+.innerTypingPane {
+    -fx-padding: 20;
+}
+
+.scroll-pane {
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.timer {
+    -fx-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-family: 'Home Video';
+}
+
+.raceLightContainer {
+    -fx-background-color: black;
+}
+
+.raceLight {
+    -fx-background-image:url('images/misc_assets/racelightframe.png');
+    -fx-background-repeat: NO-REPEAT;
+    -fx-background-size: 100% 100%;
+    -fx-min-width: 30;
+    -fx-min-height: 30;
+}

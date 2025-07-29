@@ -1,0 +1,46 @@
+.root {
+    -fx-background-color: #2d2d2d !important;
+    -fx-font-size: 18;
+    -fx-text-fill: green;
+}
+
+Text {
+    -fx-fill: #e5e5e5;
+}
+
+.check-box {
+    -fx-text-fill: #e5e5e5;
+}
+
+.button {
+    -fx-background-color:  #b33030;
+    -fx-background-radius: 5;
+    -fx-text-fill: #e5e5e5;
+}
+
+.appbar {
+    -fx-background-color:  #b33030;
+    -fx-text-fill: #e5e5e5;
+}
+
+.appbar-title {
+    -fx-font-weight: bold;
+    -fx-font-size: 28;
+}
+
+.appbar-button {
+    -fx-background-color: #2d2d2d !important;
+    -fx-text-fill: #e5e5e5 !important;
+}
+
+.toggle-button {
+    -fx-background-color: #b33030;
+    -fx-background-radius: 5;
+    -fx-text-fill: #e5e5e5;
+}
+
+.toggle-button:selected {
+    -fx-background-color: #4488cc;
+    -fx-background-radius: 5;
+    -fx-text-fill: #e5e5e5;
+}
